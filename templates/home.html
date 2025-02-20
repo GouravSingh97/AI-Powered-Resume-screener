@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Screener</title>
+</head>
+<body>
+    <h1>Upload Resume for Screening</h1>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <label for="resume">Choose Resume (PDF/DOCX/TXT):</label>
+        <input type="file" name="resume" id="resume" accept=".pdf,.docx,.txt" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if resume_text %}
+        <h2>Resume Text:</h2>
+        <pre>{{ resume_text }}</pre>
+    {% endif %}
+</body>
+</html>
